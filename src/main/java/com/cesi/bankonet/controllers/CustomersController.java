@@ -2,28 +2,45 @@ package com.cesi.bankonet.controllers;
 
 import com.cesi.bankonet.models.Customer;
 import com.cesi.bankonet.repositories.CustomersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-
-
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customers")
 public class CustomersController {
-	@Autowired
-	private CustomersRepository customersRepository;
 
-	@GetMapping
-	public @ResponseBody
-	Iterable<Customer> getAllUsers() {
-		// This returns a JSON or XML with the users
-		return customersRepository.findAll();
-	}
+    private final CustomersRepository customersRepository;
+
+    public CustomersController(CustomersRepository customersRepository) {
+        this.customersRepository = customersRepository;
+    }
+
+    @GetMapping
+    public @ResponseBody
+    Iterable<Customer> getAllUsers() {
+        return customersRepository.findAll();
+    }
+
+    @PostMapping
+    public @ResponseBody
+    Customer create(@RequestBody Customer customer) {
+        return customersRepository.save(customer);
+    }
+
+    @PutMapping
+    public @ResponseBody
+    Customer update(@RequestBody Customer customer) {
+        return customersRepository.save(customer);
+    }
+
+    @DeleteMapping("/{id}")
+    public @ResponseBody
+    void delete(@PathVariable("id") Long id) {
+        customersRepository.delete(new Customer(id));
+    }
 
 }
+
+
+
 
 
