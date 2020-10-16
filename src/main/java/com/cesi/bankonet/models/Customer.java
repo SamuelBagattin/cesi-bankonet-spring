@@ -16,9 +16,9 @@ public class Customer {
 
     public String lastName;
 
-    @OneToOne()
-    @JoinColumn(name = "current_account_id", referencedColumnName = "id")
-    public CurrentAccount currentAccount;
+    @ManyToMany()
+    @JoinColumn(referencedColumnName = "id")
+    public List<CurrentAccount> currentAccount;
 
     public Customer(Long id) {
         this.id = id;

@@ -2,10 +2,7 @@ package com.cesi.bankonet.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class CurrentAccount {
@@ -19,10 +16,6 @@ public class CurrentAccount {
     public double balance;
 
     public double authorizedOverdraft;
-
-    @OneToOne(mappedBy = "currentAccount")
-    @JsonIgnore
-    public Customer customer;
 
     public CurrentAccount() {
     }
