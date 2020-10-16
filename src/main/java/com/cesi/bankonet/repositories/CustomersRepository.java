@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 
 
-public interface CustomersRepository extends CrudRepository<Customer, Integer> {
+public interface CustomersRepository extends CrudRepository<Customer, Long> {
 
 }

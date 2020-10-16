@@ -16,6 +16,11 @@ public class Customer {
 
     public String lastName;
 
+    @OneToOne(mappedBy = "customerId")
+    public CurrentAccount currentAccount;
+
+    public Long currentAccountId;
+
     public Customer(Long id) {
         this.id = id;
     }
