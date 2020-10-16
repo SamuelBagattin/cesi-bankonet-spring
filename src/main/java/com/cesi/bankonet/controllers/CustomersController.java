@@ -26,7 +26,7 @@ public class CustomersController {
         return customersRepository.save(customer);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public @ResponseBody
     Customer update(@RequestBody Customer customer) {
         return customersRepository.save(customer);
