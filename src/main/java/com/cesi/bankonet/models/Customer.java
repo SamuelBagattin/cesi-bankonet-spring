@@ -16,10 +16,9 @@ public class Customer {
 
     public String lastName;
 
-    @OneToOne(mappedBy = "customerId")
+    @OneToOne()
+    @JoinColumn(name = "current_account_id", referencedColumnName = "id")
     public CurrentAccount currentAccount;
-
-    public Long currentAccountId;
 
     public Customer(Long id) {
         this.id = id;
