@@ -27,7 +27,7 @@ public class CustomersController {
     @PostMapping
     public @ResponseBody
     Customer create(@RequestBody Customer customer) {
-        return customersRepository.save(customer);
+        return customersService.create(customer);
     }
 
     @PutMapping("/{id}")

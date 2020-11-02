@@ -24,4 +24,6 @@ class BankonetApplicationTests {
         CurrentAccount compte1 = new CurrentAccount(123456L, "Dupont", 0.0d, -500.0d);
         assertEquals("CurrentAccount{number='123456', name='Dupont', balance='0.0', authorizedOverDraft='-500.0'}", compte1.toString());
     }
+
+
 }
