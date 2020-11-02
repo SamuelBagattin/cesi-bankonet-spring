@@ -31,4 +31,13 @@ public class CurrentAccount {
         this.authorizedOverdraft = authorizedOverdraft;
     }
 
+    @Override
+    public String toString() {
+        return "CurrentAccount{" +
+                "number='" + number + '\'' +
+                ", name='" + name + '\'' +
+                ", balance='" + balance + '\'' +
+                ", authorizedOverDraft='" + authorizedOverdraft + '\'' +
+                '}';
+    }
 }
