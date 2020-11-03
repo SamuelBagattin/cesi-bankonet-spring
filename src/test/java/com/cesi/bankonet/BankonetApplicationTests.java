@@ -1,6 +1,5 @@
 package com.cesi.bankonet;
 
-import com.cesi.bankonet.models.Account;
 import com.cesi.bankonet.models.CurrentAccount;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
